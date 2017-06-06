@@ -433,7 +433,7 @@ func ExampleCopier_Run_progress() {
 	dst := client.Bucket("another-bucketname").Object("file2")
 
 	copier := dst.CopierFrom(src)
-	copier.ProgressFunc = func(copiedBytes, totalBytes uint64) {
+	copier.ProgressFunc = func(copiedBytes, totalBytes int64) {
 		log.Printf("copy %.1f%% done", float64(copiedBytes)/float64(totalBytes)*100)
 	}
 	if _, err := copier.Run(ctx); err != nil {

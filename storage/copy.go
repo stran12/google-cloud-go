@@ -54,7 +54,7 @@ type Copier struct {
 	// float64(copiedBytes)/float64(totalBytes).
 	//
 	// ProgressFunc should return quickly without blocking.
-	ProgressFunc func(copiedBytes, totalBytes uint64)
+	ProgressFunc func(copiedBytes, totalBytes int64)
 
 	dst, src *ObjectHandle
 }
